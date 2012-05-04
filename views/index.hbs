@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <ul class="nav nav-pills">
+        {{#if orgList}}
+        {{#each orgList.orgList}}
+        <li><a href="/overall_federal_agency?val={{this}}">{{this}}</a></li>
+        {{/each}}
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</div>
+<table class="table table-striped table-bordered" id="challenge_table">
+  <thead>
+    <tr>
+      <td><b>Challenge Name</b></td>
+      <td><b>Category</b></td>
+      <td><b>Sponsoring Agency</b></td>
+      <td><b>About</b></td>
+      <td><b>Time from Announcement to Submission Close Date</b></td>
+      <td><b>Time from Submission Close Date to Judging Date</b></td>
+      <td><b>Time for Judging</b></td>
+      <td><b>Time from Judging to Winner Announcement</b></td>
+      <td><b>Judges</b></td>
+      <td><b>Total Prize Purse</b></td>
+      <td><b>Grand Prize</b></td>
+      <td><b># of Finalists</b></td>
+      <td><b>Type of Competition</b></td>
+      <td><b>Output</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each challenges}}
+    <tr>
+      <td>{{this.record.challenge_name}}</td>
+      <td>{{this.record.category}}</td>
+      <td><a href="/organization?val={{this.record.organization}}">{{this.record.organization}}</a></td>
+      <td>{{this.record.about}}</td>
+      <td>{{this.record.time_from_announcement_to_submission_close}}</td>
+      <td>{{this.record.time_from_submission_close_to_judging}}</td>
+      <td>{{this.record.time_for_judging}}</td>
+      <td>{{this.record.time_from_judging_to_winner_announcement}}</td>
+      <td>{{this.record.judges}}</td>
+      <td>{{this.record.total_prize_purse}}</td>
+      <td>{{this.record.grand_prize_winner}}</td>
+      <td>{{this.record.number_of_finalists}}</td>
+      <td>{{this.record.type_of_competition}}</td>
+      <td>{{this.record.output}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
